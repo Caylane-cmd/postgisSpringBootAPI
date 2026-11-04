@@ -1,0 +1,11 @@
+# Arquivos gerados pelo Maven
+target/
+
+# Configurações locais do VS Code
+.vscode/
+
+# Configurações privadas do banco de dados
+src/main/resources/application.properties
+
+# Arquivos temporários
+*.log
