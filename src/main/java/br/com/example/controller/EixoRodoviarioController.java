@@ -44,5 +44,14 @@ public class EixoRodoviarioController {
     public List<EixoRodoviarioVO> buscarPorTipoComVO(@PathVariable String tipo) {
         return eixoRodoviarioRepository.buscarPorTipoPavimento(tipo);
     }
+    @GetMapping("/teste/{tipo}")
+public List<String> testarSemGeometria(@PathVariable String tipo) {
+    return eixoRodoviarioRepository.findByTipoPavimento(tipo)
+            .stream()
+            .map(e -> e.getDescricaoSegmento() + " - " +
+                      e.getTipoPavimento() + " - " +
+                      e.getCodigo())
+            .toList();
+}
 }
 

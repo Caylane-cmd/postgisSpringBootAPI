@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 import org.locationtech.jts.geom.MultiLineString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Data
 @Entity
@@ -32,7 +33,8 @@ public class EixoRodoviario implements Serializable {
     @Column(name = "codigo")
     private String codigo;
 
-    @Column(name = "geom")
-    private MultiLineString geometria;
+    @JsonIgnore
+@Column(name = "geom")
+private MultiLineString geometria;
 }
 
